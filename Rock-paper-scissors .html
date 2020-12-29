@@ -3,7 +3,7 @@
     <Body>
         <Meta charset="UTF-8">
             <title>Rock, Paper, Scissors</title> 
-            <button id="Rock">Rock</button>
+            <button id="Rock" >Rock</button>
             <button id="Paper">Paper</button>
             <button id="Scissors">Scissors</button>
     
@@ -43,39 +43,58 @@
             return playerWin;
             }
         }
-        let playerScore = 0;
+            let playerScore = 0;
             let computerScore = 0;
-        function Game(){
-            
+            function Game(){
+              for(let i=0;i<5;i++){
+
+
              
-                let playerSelection = (Rbtn,Pbtn,Sbtn);
+              
+    let button= document.getElementById("Rock","Paper","Scissors");
+    
+    let playerSelection= document.addEventListener("click", function (e) {
+        if(button.id == "Rock") playerSelection = "Rock";
+        if(button.id == "Paper") playerSelection = "Paper";
+        if(button.id == "Scissors") playerSelection = "Scissors";
+    });
                 let computerSelection = computerPlay();
                 let playerWin = playRound(playerSelection, computerSelection);
+                
+                
                 if (playerWin) {
-          console.log("You WIN! " + playerSelection + " beats " + computerSelection);
-          playerScore++;
+                console.log("You WIN! " + playerSelection + " beats " + computerSelection);
+                playerScore++;
         }
         if (playerWin === false){
           console.log("You Lose! " + computerSelection + " beats " + playerSelection);
           computerScore++;
         }
-      }
+      ;
       console.log("Player Score: " + playerScore + " Computer Score: " + computerScore);
       if (playerScore > computerScore) {
         console.log("Player has won!");
       }
       else {
         console.log("Computer has won!");
-
-        document.getElementById('Rock').onclick = playerSelection;
-        document.getElementById('Paper').onclick = playerSelection;
-        document.getElementById('Scissors').onclick = playerSelection;
+      }
         
+        //document.getElementById('Paper').onclick = playerSelection;
+       // document.getElementById('Scissors').onclick = playerSelection;
+       //document.getElementById('Rock').addEventListener("click", function(){
+         // console.log(this.id);
+        //});
+        //document.getElementById('Paper').addEventListener("click", function(){
+         // console.log(this.id);
+        //});
+        //document.getElementById('Scissors').addEventListener("click", function(){
+          //console.log(this.id);
+        //});
                 
+      }     
+
                 
-                
-                
-            }
+      }
   
 
           
@@ -86,4 +105,3 @@
     </script>
     </Body>
     </html>
-        
